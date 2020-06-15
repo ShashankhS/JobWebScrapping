@@ -40,6 +40,7 @@ def scrape():
 
     json.dump(joblist, fp, indent=1)
     fp.close()
+    print(joblist)
 
 
 try:

@@ -1,10 +1,3 @@
-
-
-
-//var val = "<?php echo $val ?>";
-
-
-
 const queryString = window.location.search;
 console.log("urll data"+queryString);
 clicked_id=queryString.slice(1);
@@ -19,14 +12,14 @@ request.onreadystatechange = function() {
    console.log('HELOOO');
    var my_JSON_object = JSON.parse(request.responseText);
    y=my_JSON_object[0].title;
-   
+
    var distinct = [];
-   
+
    console.log(my_JSON_object.length);
    for (var i = 0; i < my_JSON_object.length; i++){
     var a=my_JSON_object[i].location;
     var cities=a.split(',');
-    
+
      for(var j=0; j<cities.length;j++){
        var trimmed=cities[j].trim();
       if (trimmed == clicked_id){
@@ -34,14 +27,14 @@ request.onreadystatechange = function() {
       }
      }
    }
-  
+
 
 
 var x ="", i;
 console.log("my lengthhh"+distinct.length);
 for (i=0; i<distinct.length; i++) {
  x = x +
- 
+
  '<div class="col-md-4">'+
  '<a href="#">'+
  '<div class="card">'+
@@ -53,7 +46,7 @@ for (i=0; i<distinct.length; i++) {
 
      '<p class="jd">'+distinct[i].jd+'</p>'+
      '<h2>Skills : '+distinct[i].skills+' </h2>'+
-     
+
      '<div class="card-meta">'+
        '<p class="card-date"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Posted '+distinct[i].created+'</span></p>'+
        '<ul class="card-social">'+
@@ -72,14 +65,14 @@ document.getElementById("demo4").innerHTML = title;
 
 
 
-  
+
  }
 }
 
 
 (function($) {
     "use strict"; // Start of use strict
-  
+
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -93,7 +86,7 @@ document.getElementById("demo4").innerHTML = title;
         }
       }
     });
-  
+
     // Scroll to top button appear
     $(document).scroll(function() {
       var scrollDistance = $(this).scrollTop();
@@ -103,18 +96,18 @@ document.getElementById("demo4").innerHTML = title;
         $('.scroll-to-top').fadeOut();
       }
     });
-  
+
     // Closes responsive menu when a scroll trigger link is clicked
     $('.js-scroll-trigger').click(function() {
       $('.navbar-collapse').collapse('hide');
     });
-  
+
     // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
       target: '#mainNav',
       offset: 80
     });
-  
+
     // Collapse Navbar
     var navbarCollapse = function() {
       if ($("#mainNav").offset().top > 100) {
@@ -127,7 +120,7 @@ document.getElementById("demo4").innerHTML = title;
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
-  
+
     // Floating label headings for the contact form
     $(function() {
       $("body").on("input propertychange", ".floating-label-form-group", function(e) {
@@ -138,5 +131,5 @@ document.getElementById("demo4").innerHTML = title;
         $(this).removeClass("floating-label-form-group-with-focus");
       });
     });
-  
+
   })(jQuery); // End of use strict

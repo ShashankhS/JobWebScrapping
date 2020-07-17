@@ -1,2 +1,4 @@
 # JobWebScrapping
-A website that provides all latest job listings that are present in different job listing websites
+An automated website that provides all the latest job listings that are from different job listing websites.
+
+
